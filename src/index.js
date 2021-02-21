@@ -1,3 +1,11 @@
 module.exports = function check(str, bracketsConfig) {
-  // your solution
+
+    for (let i = 0; i < bracketsConfig.length; i++) {
+        let warning = bracketsConfig[i].join('');
+        if (str.includes(warning)) {
+            str = str.replace(warning, '');
+            i = -1;
+        }
+    }
+    return !str;
 }
